@@ -1,14 +1,15 @@
 {;; key names: https://github.com/yqrashawn/GokuRakuJoudo/blob/master/src/karabiner_configurator/keys_info.clj
  ;; formatter extension https://marketplace.visualstudio.com/items?itemName=betterthantomorrow.calva
  :profiles {:Default {:default    true
-                      :sim        50      ;; if keydown event for two different keys are pressed within :sim ms, the keypresses are considered simultaneous
-                      :delay      250     ;; after :delay ms, the key press is considered to be delayed (TODO WHAT IS THIS??)
-                      :alone      500    ;; if keyup event comes within :alone ms from keydown, the key is not just pressed but held
-                      :held       300     ;; key is fired twice when :held ms is elapsed (otherwise seen as a hold command) (TODO WHAT IS THIS??)
+                      :sim        200      ;; if keydown event for two different keys are pressed within :sim ms, the keypresses are considered simultaneous
+                      :simlayer-threshold 250
+                      :delay      150     ;; after :delay ms, the key press is considered to be delayed (TODO WHAT IS THIS??)
+                      :alone      250    ;; if keyup event comes within :alone ms from keydown, the key is not just pressed but held
+                      :held       250     ;; key is fired twice when :held ms is elapsed (otherwise seen as a hold command) (TODO WHAT IS THIS??)
                       }}
 
 ;; goku doc references:
-;;
+;;s 
 ;; !  | means mandatory
 ;; #  | means optional
 ;; C  | left_command
@@ -29,15 +30,14 @@
          :rules [;; Exclude other layers so it's easy to remap within them.
                  :!spacefn
 
-                 ;; Homerow
-                 [:##a :##a]
-                 [:##s :##o]
-                 [:##d :##e]
-                 [:##f :##u]
-
-                 [:##j :##h]
-                 [:##k :##t]
-                 [:##l :##n]
+                 ;; Homerow mods
+                 [:##a nil nil {:alone :##a :held :left_control}]
+                 [:##s nil nil {:alone :##o :held :left_shift}]
+                 [:##d nil nil {:alone :##e :held :left_option}]
+                 [:##f nil nil {:alone :##u :held :left_command}]
+                 [:##j nil nil {:alone :##h :held :right_command}]
+                 [:##k nil nil {:alone :##t :held :right_option}]
+                 [:##l nil nil {:alone :##n :held :right_shift}]
                  [:##semicolon :##s]
 
                  [:##b :##x]
