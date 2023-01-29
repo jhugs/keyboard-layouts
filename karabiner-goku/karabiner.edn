@@ -3,7 +3,7 @@
  :profiles {:Default {:default    true
                       :sim        50      ;; if keydown event for two different keys are pressed within :sim ms, the keypresses are considered simultaneous
                       :delay      250     ;; after :delay ms, the key press is considered to be delayed (TODO WHAT IS THIS??)
-                      :alone      150    ;; if keyup event comes within :alone ms from keydown, the key is not just pressed but held
+                      :alone      500    ;; if keyup event comes within :alone ms from keydown, the key is not just pressed but held
                       :held       300     ;; key is fired twice when :held ms is elapsed (otherwise seen as a hold command) (TODO WHAT IS THIS??)
                       }}
 
@@ -29,23 +29,28 @@
          :rules [;; Exclude other layers so it's easy to remap within them.
                  :!spacefn
 
+                 ;; Homerow
                  [:##a :##a]
+                 [:##s :##o]
+                 [:##d :##e]
+                 [:##f :##u]
+
+                 [:##j :##h]
+                 [:##k :##t]
+                 [:##l :##n]
+                 [:##semicolon :##s]
+
                  [:##b :##x]
                  [:##backslash :##backslash]
                  [:##c :##j]
                  [:##close_bracket :##equal_sign]
                  [:##comma :##w]
-                 [:##d :##e]
                  [:##e :##period]
                  [:##equal_sign :##close_bracket]
-                 [:##f :##u]
                  [:##g :##i]
                  [:##h :##d]
                  [:##hyphen :##open_bracket]
                  [:##i :##c]
-                 [:##j :##h]
-                 [:##k :##t]
-                 [:##l :##n]
                  [:##m :##m]
                  [:##n :##b]
                  [:##non_us_backslash :##grave_accent_and_tilde]
@@ -56,8 +61,6 @@
                  [:##q :##quote]
                  [:##quote :##hyphen]
                  [:##r :##p]
-                 [:##s :##o]
-                 [:##semicolon :##s]
                  [:##slash :##z]
                  [:##t :##y]
                  [:##u :##g]
