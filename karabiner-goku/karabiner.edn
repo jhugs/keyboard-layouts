@@ -28,6 +28,8 @@
  :main [{:des "Dvorak"
          :rules [;; Exclude other layers so it's easy to remap within them.
                  :!spacefn
+                 :!rightmod
+                 :!leftmod
 
                  ;; Homerow
                  [:##a :##a]
@@ -87,4 +89,20 @@
                  [:##i :up_arrow]
                  [:##l :right_arrow]
                  [:##m :delete_or_backspace]
-                 [:##comma :delete_forward]]}]}
+                 [:##comma :delete_forward]]}
+
+        {:des "Left command mods"
+         :rules [[:##left_command ["leftmod" 1] [:!symbols :!mouse :!shifted :!system] {:afterup ["leftmod" 0] :alone :escape}]
+                 :leftmod
+                ;; modifiers
+                 [:##a :##left_control]
+                 [:##s :##left_shift]
+                 [:##d :##left_option]
+                 [:##f :##left_command]]}
+        {:des "Right command mods"
+         :rules [[:##right_command ["rightmod" 1] [:!symbols :!mouse :!shifted :!system] {:afterup ["rightmod" 0] :alone :caps_lock}]
+                 :rightmod
+                ;; modifiers
+                 [:##j :##right_command]
+                 [:##k :##right_option]
+                 [:##l :##right_shift]]}]}
