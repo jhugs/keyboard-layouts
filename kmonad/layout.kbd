@@ -9,6 +9,7 @@
     cpy M-c
     pst M-v
     cut M-x
+    _a (tap-hold-next-release 200 a lctl)
     _u (tap-hold-next-release 200 u lmet)
     _e (tap-hold-next-release 200 e lalt)
     _o (tap-hold-next-release 200 o lsft)
@@ -42,7 +43,7 @@
   esc  brdn brup lp   mctl bldn blup prev pp   next mute vold volu
   grv  1    2    3    4    5    6    7    8    9    0    [    ]    bspc
   tab  '    ,    .    p    y    f    g    c    r    l    /    =    \
-  ret  a    @_o  @_e  @_u  i    d    @_h  @_t  @_n   s    -   ret
+  ret  @_a  @_o  @_e  @_u  i    d    @_h  @_t  @_n   s    -   ret
   lsft ;    q    j    k    x    b    m    w    v    z    rsft up
   @fn  lctl lalt lmet           @spc           rmet ralt left down rght
 )
