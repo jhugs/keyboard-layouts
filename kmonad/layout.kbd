@@ -42,10 +42,10 @@
 (deflayer default
   esc  brdn brup lp   mctl bldn blup prev pp   next mute vold volu
   grv  1    2    3    4    5    6    7    8    9    0    [    ]    bspc
-  tab  '    ,    .    p    y    f    g    c    r    l    /    =    \
+  esc  '    ,    .    p    y    f    g    c    r    l    /    =    \
   ret  @_a  @_o  @_e  @_u  i    d    @_h  @_t  @_n   s    -   ret
   lsft ;    q    j    k    x    b    m    w    v    z    rsft up
-  @fn  lctl lalt lmet           @spc           rmet ralt left down rght
+  @fn  lctl lalt tab            @spc           rmet ralt left down rght
 )
 
 (deflayer navigation
