@@ -1,0 +1,66 @@
+(defcfg
+  process-unmapped-keys yes
+)
+
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft      up
+  fn   lctl lalt lmet      spc            rmet ralt           left down rght
+)
+
+(deflayer dvorak
+  esc  brdn brup f3   f4   f5   f6   prev pp   next mute vold volu
+  grv  1    2    3    4    5    6    7    8    9    0    [    ]    bspc
+  esc  '    ,    .    p    y    f    g    c    r    l    /    =    \
+  ret  @_a  @_o  @_e  @_u  i    d    @_h  @_t  @_n  @_s   -   ret
+  lsft ;    q    j    k    x    b    m    w    v    z    rsft up
+  @fn  lctl lalt tab            @spc           rmet ralt left down rght
+)
+
+(deflayer navigation
+  _    _    _    _    _    _    _   _    _     _     _   _  _
+  _    _    _    _    _    _    _   _    _     _     _   _  _  _
+  _    _    @cut @cpy @pst _    _   home up    end   _   _  _  _
+  _    _    lsft lalt lmet _    _   left down  rght  _   _  _
+  _    _    _    _    _    _    _   bspc del   _     _   _  _
+  _    _    _    _              _              _     _   _  _  _
+)
+
+(deflayer function
+  _    f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12 
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _              _              _    _    _    _    _
+)
+
+(defvar
+  ;; Note: consider using different time values for your different fingers.
+  ;; For example, your pinkies might be slower to release keys and index
+  ;; fingers faster.
+  tap-time 200
+  hold-time 150
+)
+
+(defalias
+    cpy M-c
+    pst M-v
+    cut M-x
+
+    spc (tap-hold $tap-time $hold-time spc (layer-toggle navigation))
+    fn  (tap-hold $tap-time $hold-time fn  (layer-toggle function))
+
+    _a (tap-hold $tap-time $hold-time a lctl)
+    _u (tap-hold $tap-time $hold-time u lmet)
+    _e (tap-hold $tap-time $hold-time e lalt)
+    _o (tap-hold $tap-time $hold-time o lsft)
+
+    _h (tap-hold $tap-time $hold-time h rmet)
+    _t (tap-hold $tap-time $hold-time t ralt)
+    _n (tap-hold $tap-time $hold-time n lsft)
+    _s (tap-hold $tap-time $hold-time s rctl)
+)
