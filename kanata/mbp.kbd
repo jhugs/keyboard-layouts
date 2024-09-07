@@ -17,7 +17,16 @@
   esc  '    ,    .    p    y    f    g    c    r    l    /    =    \
   ret  @_a  @_o  @_e  @_u  i    d    @_h  @_t  @_n  @_s   -   ret
   lsft ;    q    j    k    x    b    m    w    v    z    rsft up
-  @fn  lctl lalt tab            @spc           rmet ralt left down rght
+  @fn  lctl lalt tab            @spc           @sym ralt left down rght
+)
+
+(deflayer symbols
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    S-1  S-2  S-3  S-4  S-5  S-6  S-7  S-8  S-[  S-]  _    _    _
+  _    _    _    _    _    _    grv  S-9  S-0  [    ]    _    _
+  _    _    '    =    S-.  \    S-\  S-=    left rght _    _    _
+  _    _    _    _              _              _    _    _    _    _
 )
 
 (deflayer navigation
@@ -50,6 +59,8 @@
     cpy M-c
     pst M-v
     cut M-x
+
+    sym (layer-toggle symbols)
 
     spc (tap-hold $tap-time $hold-time spc (layer-toggle navigation))
     fn  (tap-hold $tap-time $hold-time fn  (layer-toggle function))
